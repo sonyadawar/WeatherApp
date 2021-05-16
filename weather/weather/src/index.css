@@ -9,14 +9,15 @@ body {
 }
 
 .app {
-  background-image: url('./assets/cold-bg.jpg');
-  background-size: cover;
+  background-image: url('./Assets/cold-bg.jpg');
+  background-size: Stretched;
+  background-repeat: no-repeat;
   background-position: bottom;
   transition: 0.4 ease;
 }
 
 .app.warm {
-  background-image: url('./assets/warm-bg.jpg');
+  background-image: url('./Assets/warm-bg.jpg');
 }
 
 main {
@@ -26,8 +27,9 @@ main {
 }
 
 .search-box {
-  width: 100%;
-  margin: 0 0 75px;
+  margin-left: 417px;
+  width: 30%;
+  
 }
 
 .search-box .search-bar {

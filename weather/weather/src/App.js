@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 const api = {
   key: "4c3fbbd844a8616d86f77d15874ab559",
   base: "https://api.openweathermap.org/data/2.5/"
@@ -8,14 +9,13 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
-  const search = evt => {
+  const search =async evt => {
     if (evt.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then(res => res.json())
+      await axios.get(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then(result => {
-          setWeather(result);
+          setWeather(result.data);
           setQuery('');
-          console.log(result);
+          console.log(result,"hell");
         });
     }
   }
